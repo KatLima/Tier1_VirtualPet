@@ -1,0 +1,66 @@
+body {
+    background-color:#00010a;
+    color:white;
+}
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#00010a;
+
+}
+header ul li {
+    float:right;
+}
+header ul li a {
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;   
+}
+header ul li a:hover {
+    background-color: #000058;
+}
+
+.left {
+    float:left;
+    width: 30%;
+    background-color:#0c0c33;
+    padding: 0 10px 0 0;
+}
+.right {
+    float:right;
+    width:70%;
+    background-color:#1c1927;
+    padding: 0 10px 0 0;
+}
+
+.task {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#003100;
+    width:300px;
+}
+.task li {
+    float:left;
+}
+.task li a { 
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; 
+
+
+}
+.task li a:hover {
+    background-color:green;
+}
+
+img {
+    width: 250px;
+}
