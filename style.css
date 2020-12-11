@@ -1,3 +1,4 @@
+
 body {
     background-color:#00010a;
     color:white;
@@ -23,44 +24,45 @@ header ul li a {
 header ul li a:hover {
     background-color: #000058;
 }
-
+* {
+    box-sizing: border-box;
+}
+  
+  /* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
 .left {
-    float:left;
+    padding-left: 20px;
+    display:flex;
+    flex-flow:column;
+    height:100vh;
     width: 30%;
-    background-color:#0c0c33;
-    padding: 0 10px 0 0;
+    background-color: #222235;
 }
 .right {
-    float:right;
-    width:70%;
-    background-color:#1c1927;
-    padding: 0 10px 0 0;
+    padding-left:50px;
+    display:flex;
+    flex-flow:column;
+    height:100vh;
+    width: 70%;
+    background-color:#191522;
+}
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.task {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color:#003100;
-    width:300px;
-}
-.task li {
-    float:left;
-}
-.task li a { 
-    display: block;
-    color:white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none; 
-
-
-}
-.task li a:hover {
-    background-color:green;
-}
 
 img {
     width: 250px;
+}
+
+button {
+    margin:10px;
+
 }
