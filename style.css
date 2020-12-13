@@ -9,7 +9,6 @@ header ul {
     padding: 0;
     overflow: hidden;
     background-color:#00010a;
-
 }
 header ul li {
     float:right;
@@ -22,7 +21,7 @@ header ul li a {
     text-decoration: none;   
 }
 header ul li a:hover {
-    background-color: #000058;
+    background-color: #222235;
 }
 * {
     box-sizing: border-box;
@@ -31,8 +30,7 @@ header ul li a:hover {
   /* Create two unequal columns that floats next to each other */
 .column {
     float: left;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    padding: 10px; 
 }
 .left {
     padding-left: 20px;
@@ -56,13 +54,64 @@ header ul li a:hover {
     display: table;
     clear: both;
 }
-
-
 img {
     width: 250px;
 }
 
 button {
     margin:10px;
+}
 
+#health_display{ 
+    width: 90%;
+}
+#hunger_display{
+    width: 90%;
+}
+#happiness_display{
+    width: 90%;
+}
+
+#settings{
+    color: white;
+    background-color: grey;
+    width:50%
+}
+
+#settings:hover{
+    background-color: rgb(76, 82, 76);
+}
+
+#clean{
+    color:white;
+    background-color:rgb(83, 155, 179);
+    border-radius: 5px;
+    width: 100px;
+ 
+}
+
+#feed{
+    color:white;
+    background-color:green;
+    border-radius: 5px;
+    width: 100px;
+}
+
+#play{
+    color:white;
+    background-color: orange;
+    border-radius: 5px;
+    width: 100px;
+}
+
+#clean:hover{
+    background-color:rgb(14, 65, 160);
+}
+
+#feed:hover{
+    background-color: rgb(8, 77, 8);
+}
+
+#play:hover{
+    background-color:rgb(255, 115, 0);
 }

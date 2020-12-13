@@ -3,7 +3,8 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <title>
+
+    <title>
             Virtual Tamagotchi 
         </title>
     </head>
@@ -17,21 +18,30 @@
     <body>
         <div class="row">
             <div class="column left">
-                <h1> Welcome Home!</h1>
+                <h2> 3 Days Old</h2>
                 <h3> Health </h3>
+                <canvas id="health_display" width="1000" height="30" style="border:2px solid #167709; border-radius: 5px"></canvas>
                 <h3> Hunger </h3>
+                <canvas id="hunger_display" width="1000" height="30" style="border:2px solid #a0b0e4; border-radius: 5px"></canvas>
                 <h3> Happiness </h3>
+                <canvas id="happiness_display" width="1000" height="30" style="border:2px solid #e0a7a7; border-radius: 5px"></canvas>
+                <button id="settings"> Settings </button>
             </div>
             <div class="column right">
                 <h2> Giratina </h2>
                 <img src="/assets/giratina_mv.gif" alt="Giratina Happy">
                 <div class="task">
-                    <button>Clean</button>
-                    <button>Feed</button>
-                    <button>Play</button>
+                    <button id="clean" onclick="Clean()">Clean</button>
+                    <button id="feed" onclick="Feed()">Feed</button>
+                    <button id="play" onclick="Play()">Play</button>  
                 </div>
+                <p id="clean_text"></p>
+                <p id="feed_text"></p>
+                <p id="play_text"></p>
             </div>
         </div>
-    </body>
 
-</html>
+        <script type="text/javascript" src="script.js"></script>
+        
+    </body>
+</html>    
