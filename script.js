@@ -1,42 +1,83 @@
-//clean button function, on click will raise cleaniness by 5 points
-function Feed() {
-    document.getElementById("feed_text").innerHTML = "You fed Giratina!";
-}
-
-function Clean() {
-    document.getElementById("clean_text").innerHTML = "Giratina feels clean!";
-}
-function Play() {
-    document.getElementById("play_text").innerHTML = "Giratina is happy!";
-}
-
 //health, hunger, happinessbar function, will decrease every 10000ms
-window.onload=function(){
+//window.onload=function(){
+window.onload = function() {
+        
+    document.getElementById("clean-button").addEventListener("click", clickedCleanButton);
+    document.getElementById("feed-button").addEventListener("click", clickedFeedButton);
+    document.getElementById("play-button").addEventListener("click", clickedPlayButton);
+
+    let sprite_info = {
+        name: "giratina",
+        happiness: 1000,
+        hunger: 1000,
+        cleaniness: 1000,
+        age: 0
+    }
+    UpdateSpriteInfo();
+
+function clickedCleanButton(){
+    sprite_info['cleaniness'] += 50;
+    console.log(sprite_info['cleaniness']);
+    UpdateSpriteInfo();
+}
+
+ function clickedFeedButton (){
+     sprite_info['hunger'] += 50;
+     console.log(sprite_info['hunger']);
+     UpdateSpriteInfo();
+ }
+
+ function clickedPlayButton(){
+     sprite_info['happiness'] += 50;
+     console.log(sprite_info['happiness']);
+     UpdateSpriteInfo();
+ }
+
+ function UpdateSpriteInfo(){
+
     canvas_health = document.getElementById('health_display');
     health_bar = canvas_health.getContext('2d');
     health_bar.fillStyle='green';
-    health_bar.fillRect(0,0,700,50);
+    health_bar.fillRect(0,0,sprite_info['cleaniness'],50);
 
     //hunger bar function, will decrease every 10000ms
     canvas_hunger = document.getElementById('hunger_display');
     hunger_bar = canvas_hunger.getContext('2d');
     hunger_bar.fillStyle='lightblue';
-    hunger_bar.fillRect(0,0,550,50);
+    hunger_bar.fillRect(0,0,sprite_info['hunger'],50);
 
-    canvas_hunger = document.getElementById('happiness_display');
-    hunger_bar = canvas_hunger.getContext('2d');
-    hunger_bar.fillStyle='pink';
-    hunger_bar.fillRect(0,0,850,50);    
+    canvas_happiness = document.getElementById('happiness_display');
+    happiness_bar = canvas_happiness.getContext('2d');
+    happiness_bar.fillStyle='pink';
+    happiness_bar.fillRect(0,0,sprite_info['happiness'],50);  
+
+    /* work on decreasing bars per 10,000ms
+    setTimeout(function(){ 
+        sprite_info['cleaniness'] -= 50;
+        sprite_info['hunger'] -= 50;
+        sprite_info['happiness'] -= 50; }, 1000);
+        */
+ }
+
 }
-
-
-
+/*
+class Sprite {
+     //setup sprite
+    constructor (_name) {
+        this.sprite_name = _name; 
+        this.sprite_age = 0;
+        this.sprite_happiness = 100;
+        this.sprite_hunger = 100;
+        this.sprite_clean = 100;
+        console.log("sprite has been created");      
+    }
+   // barUpdate() {
+}
+let mySprite = new Sprite();
+*/
 /*
 var display = document.getElementById('happiness_display').getContext('2d');
-
 drawHealthbar(display,10,10,500,50,75,100);
-
-
 function drawHealthbar(canvas,x,y,width,height,health,max_health){
 
     if (health >= max_health){health = max_health;}
