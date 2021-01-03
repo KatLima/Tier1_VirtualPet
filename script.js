@@ -1,80 +1,69 @@
-//health, hunger, happinessbar function, will decrease every 10000ms
-//window.onload=function(){
 window.onload = function() {
-        
+
     document.getElementById("clean-button").addEventListener("click", clickedCleanButton);
     document.getElementById("feed-button").addEventListener("click", clickedFeedButton);
     document.getElementById("play-button").addEventListener("click", clickedPlayButton);
-
+  
     let sprite_info = {
-        name: "giratina",
-        happiness: 1000,
-        hunger: 1000,
-        cleaniness: 1000,
+        name: "giratina", 
+        happiness: 800,
+        hunger: 800,
+        cleaniness: 0,
         age: 0
     }
-    UpdateSpriteInfo();
-
-function clickedCleanButton(){
-    sprite_info['cleaniness'] += 50;
-    console.log(sprite_info['cleaniness']);
-    UpdateSpriteInfo();
-}
-
- function clickedFeedButton (){
-     sprite_info['hunger'] += 50;
-     console.log(sprite_info['hunger']);
-     UpdateSpriteInfo();
- }
-
- function clickedPlayButton(){
-     sprite_info['happiness'] += 50;
-     console.log(sprite_info['happiness']);
-     UpdateSpriteInfo();
- }
-
- function UpdateSpriteInfo(){
-
-    canvas_health = document.getElementById('health_display');
-    health_bar = canvas_health.getContext('2d');
-    health_bar.fillStyle='green';
-    health_bar.fillRect(0,0,sprite_info['cleaniness'],50);
 
     //hunger bar function, will decrease every 10000ms
-    canvas_hunger = document.getElementById('hunger_display');
-    hunger_bar = canvas_hunger.getContext('2d');
-    hunger_bar.fillStyle='lightblue';
-    hunger_bar.fillRect(0,0,sprite_info['hunger'],50);
-
-    canvas_happiness = document.getElementById('happiness_display');
-    happiness_bar = canvas_happiness.getContext('2d');
-    happiness_bar.fillStyle='pink';
-    happiness_bar.fillRect(0,0,sprite_info['happiness'],50);  
-
-    /* work on decreasing bars per 10,000ms
-    setTimeout(function(){ 
-        sprite_info['cleaniness'] -= 50;
+    /* work on decreasing bars per 10,000ms*/
+    setInterval(function(){ 
+        UpdateSpriteInfo();
+        sprite_info['cleaniness'] += 50;
         sprite_info['hunger'] -= 50;
-        sprite_info['happiness'] -= 50; }, 1000);
-        */
- }
+        //sprite_info['happiness'] -= 50;
+        console.log(sprite_info['cleaniness']);
+        }, 10000);
 
-}
-/*
-class Sprite {
-     //setup sprite
-    constructor (_name) {
-        this.sprite_name = _name; 
-        this.sprite_age = 0;
-        this.sprite_happiness = 100;
-        this.sprite_hunger = 100;
-        this.sprite_clean = 100;
-        console.log("sprite has been created");      
+    function clickedCleanButton(){
+        sprite_info['cleaniness'] += 50;
+        console.log(sprite_info['cleaniness']);
+        UpdateSpriteInfo();
     }
-   // barUpdate() {
-}
-let mySprite = new Sprite();
-*/
+
+    function clickedFeedButton (){
+        sprite_info['hunger'] += 50;
+        console.log(sprite_info['hunger']);
+        UpdateSpriteInfo();
+    }
+
+    function clickedPlayButton(){
+        sprite_info['happiness'] += 50;
+        console.log(sprite_info['happiness']);
+        UpdateSpriteInfo();
+    }
+
+    function UpdateSpriteInfo(){
+
+        //health display that grows by 50 with button click
+        canvas_health = document.getElementById('health_display');
+        health_bar = canvas_health.getContext('2d');
+        health_bar.fillStyle='green';
+        health_bar.fillRect(0,0,sprite_info['cleaniness'],50);
+
+        //hunger display
+        canvas_hunger = document.getElementById('hunger_display');
+        hunger_bar = canvas_hunger.getContext('2d');
+        hunger_bar.fillStyle='lightblue';
+        hunger_bar.fillRect(0,0,sprite_info['hunger'],50);
+
+        //happiness display 
+        canvas_happiness = document.getElementById('happiness_display');
+        happiness_bar = canvas_happiness.getContext('2d');
+        happiness_bar.fillStyle='pink';
+        happiness_bar.fillRect(0,0,sprite_info['happiness'],50);  
+
+
+    }  
+
+};
 /*
 var display = document.getElementById('happiness_display').getContext('2d');
 drawHealthbar(display,10,10,500,50,75,100);
