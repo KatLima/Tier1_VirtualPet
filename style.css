@@ -72,10 +72,16 @@ button {
     width: 90%;
 }
 
+#reset{
+    color: white;
+    background-color: grey;
+    width:30% 
+}
+
 #settings{
     color: white;
     background-color: grey;
-    width:50%
+    width:30%
 }
 
 #settings:hover{

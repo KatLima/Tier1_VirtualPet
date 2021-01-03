@@ -6,15 +6,15 @@ window.onload = function() {
     document.getElementById("play-button").addEventListener("click", clickedPlayButton);
   
     const sprite_info = {
-        name: "giratina", 
+        //name: "giratina", 
         happiness: 100,
         hunger: 100,
         cleaniness: 100,
-        age: 0
+        age: 1
     }
     UpdateSpriteInfo();
     //hunger bar function, will decrease every 10000ms
-    /* work on decreasing bars per 10,000ms*/
+    /* work on decreasing bars per 10,000ms, set if statements for when bars reach 0 */
     setInterval(function(){ 
         updateDay();
         clearBars();
